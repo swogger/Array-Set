@@ -1,9 +1,16 @@
 ArraySet
 ========
-Micro-implementation of the four basic functions in Set Theory applied on Javascript arrays.
-<br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/2/' target='_blank'>jsfiddle.net/swogger/4gpDB/2/</a>
-________
+##### Micro-implementation of the four basic operations in Set Theory applied on Javascript arrays.
 
+Array are often used as logical sets, groups of elements. 
+Operations on groups are commonsituation
+No native implementation
+No library needed due to very small implementation 
+To apply to more than two arrayloop
+
+<br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/2/' target='_blank'>jsfiddle.net/swogger/4gpDB/2/</a>
+
+-------
 
 
 Union
