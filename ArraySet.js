@@ -4,9 +4,9 @@ Created by Dimitar Kazakov dimitar.kazakov@gmail.com on 03/08/14. ( GPL 2014 )
 
 var union = function (a, b) {
     "use strict";
-    b = b.concat(a);
-    return b.filter(function (e, p) {
-        if (b.indexOf(e) === p) {
+    a = a.concat(b);
+    return a.filter(function (e, p) {
+        if (a.indexOf(e) === p) {
             return true;
         }
     });
@@ -14,8 +14,8 @@ var union = function (a, b) {
 
 var difference = function (a, b) {
     "use strict";
-    return b.filter(function (e) {
-        if (a.indexOf(e) === -1) {
+    return a.filter(function (e) {
+        if (b.indexOf(e) === -1) {
             return true;
         }
     });
@@ -23,8 +23,8 @@ var difference = function (a, b) {
 
 var intersection = function (a, b) {
     "use strict";
-    return b.filter(function (e) {
-        if (a.indexOf(e) !== -1) {
+    return a.filter(function (e) {
+        if (b.indexOf(e) !== -1) {
             return true;
         }
     });
@@ -32,10 +32,11 @@ var intersection = function (a, b) {
 
 var exclusion = function (a, b) {
     "use strict";
-    b = b.concat(a);
-    return b.filter(function (e) {
-        if (b.indexOf(e) === b.lastIndexOf(e)) {
+    a= a.concat(b);
+    return a.filter(function (e) {
+        if (a.indexOf(e) === a.lastIndexOf(e)) {
             return true;
         }
     });
 };
+
