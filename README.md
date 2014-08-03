@@ -8,7 +8,7 @@ No native implementation
 No library needed due to very small implementation 
 To apply to more than two arrayloop
 
-<br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/2/' target='_blank'>jsfiddle.net/swogger/4gpDB/2/</a>
+<br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/3/' target='_blank'>jsfiddle.net/swogger/4gpDB/3/</a>
 
 -------
 
