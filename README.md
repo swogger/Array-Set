@@ -83,7 +83,21 @@ Result Set: apple, banana, pear
 
 
 Exclusion (Symmetric Difference)
---------
-what is union
+-------- 
+
 
 <img src='http://upload.wikimedia.org/wikipedia/commons/4/46/Venn0110.svg'/>
+
+##### Returns the elements from both arrays that they did NOT have in common.
+#####Code:
+```javascript
+var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
+var sweet = ['icecream', 'banana', 'honey', 'pear', 'sugar', 'apple'];
+var result = exclusion(fruit, sweet);
+```
+#####Preview:
+```
+Fruit Set: apple, banana, lemon, lime, pear
+Sweet Set: icecream, banana, honey, pear, sugar, apple
+Result Set: lemon, lime, icecream, honey, sugar
+```
