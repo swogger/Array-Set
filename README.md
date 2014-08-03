@@ -1,6 +1,6 @@
 Arrays as Sets
 ========
-##### Micro-implementation of the basic operations in Set Theory applied on Javascript arrays.
+#### Micro-implementation of the basic operations in Set Theory applied on Javascript arrays.
 
 Using arrays as logical sets, or as groups of similar elements, is extremely common and often requires the use of set operations. Unfortunately such operations have not found yet place in the current version of ECMAScript (ES5).
 
