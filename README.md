@@ -26,7 +26,7 @@ By far one of the most common operations on arrays is merging two into one. Unfo
 ```javascript
 var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
 var sweet = ['icecream', 'banana', 'honey', 'pear', 'sugar', 'apple'];
-var result = union(sweet, fruit);
+var result = union(fruit, sweet);
 ```
 #####Preview:
 ```
@@ -47,7 +47,7 @@ Difference (Relative Complement)
 ```javascript
 var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
 var sweet = ['icecream', 'banana', 'honey', 'pear', 'sugar', 'apple'];
-var result = difference(sweet, fruit);
+var result = difference(fruit, sweet);
 ```
 #####Preview:
 ```
@@ -61,9 +61,26 @@ Result Set: lemon, lime
 
 Intersection
 --------
-Merging two arrays/sets into one that does not contain the elements that the first two arrays had in common.
+
 
 <img src='http://upload.wikimedia.org/wikipedia/commons/9/99/Venn0001.svg'/>
+
+##### Remove all elements from array/set 1 that have equivalent in array/set 2
+#####Code:
+```javascript
+var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
+var sweet = ['icecream', 'banana', 'honey', 'pear', 'sugar', 'apple'];
+var result = intersection(fruit, sweet);
+```
+#####Preview:
+```
+Fruit Set: apple, banana, lemon, lime, pear
+Sweet Set: icecream, banana, honey, pear, sugar, apple
+Result Set: apple, banana, pear
+```
+
+
+
 
 Exclusion (Symmetric Difference)
 --------
