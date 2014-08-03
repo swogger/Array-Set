@@ -25,7 +25,7 @@ var result = union(sweet, fruit);
 ```
 Fruit Set: apple, banana, lemon, lime, pear
 Sweet Set: icecream, banana, honey, pear, sugar, apple
-Result Set: icecream, banana, honey, pear, sugar, apple, lemon, lime
+Result Set: apple, banana, lemon, lime, pear, icecream, honey, sugar
 ```
 
 
@@ -35,21 +35,22 @@ Difference (Relative Complement)
 
 <img src='http://upload.wikimedia.org/wikipedia/commons/e/e6/Venn0100.svg'/>
 
-##### Merging two arrays/sets into one without duplicating elements.
-
-By far one of the most common operations on arrays is merging two into one. Unfortunately the native implementation Array.prototype.concat() preserves duplicate values both arrays share, which requires further attention to be dealt with. Union takes care of that. 
+##### Remove all elements from array/set 1 that have equivalent in array/set 2
 #####Code:
 ```javascript
 var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
 var sweet = ['icecream', 'banana', 'honey', 'pear', 'sugar', 'apple'];
-var result = union(sweet, fruit);
+var result = difference(sweet, fruit);
 ```
 #####Preview:
 ```
 Fruit Set: apple, banana, lemon, lime, pear
 Sweet Set: icecream, banana, honey, pear, sugar, apple
-Result Set: icecream, banana, honey, pear, sugar, apple, lemon, lime
+Result Set: lemon, lime
 ```
+
+
+
 
 Intersection
 --------
