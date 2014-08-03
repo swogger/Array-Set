@@ -2,11 +2,13 @@ Arrays as Sets
 ========
 ##### Micro-implementation of the basic operations in Set Theory applied on Javascript arrays.
 
-Array are often used as logical sets, groups of elements. 
-Operations on groups are commonsituation
-No native implementation
-No library needed due to very small implementation 
-To apply to more than two arrayloop
+Using arrays as logical sets, or as groups of similar elements, is extremely common and often requires the use of set operations. Unfortunately such operations have not found yet place in the current version of ECMAScript (ES5).
+
+Luckily their implementation requires just a few lines of code, not nearly enough to make it worth creating a library or a module, so use this repo more as a reference than anything else. 
+
+
+If you need to appy the operations to more than two arrays you can include it in a loop.
+
 
 <br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/3/' target='_blank'>jsfiddle.net/swogger/4gpDB/3/</a>
 
@@ -42,7 +44,7 @@ Difference (Relative Complement)
 
 <img src='http://upload.wikimedia.org/wikipedia/commons/e/e6/Venn0100.svg'/>
 
-##### Remove all elements from array/set 1 that have equivalent in array/set 2
+##### Remove all elements from array/set 1 that have equivalent in array/set 2.
 #####Code:
 ```javascript
 var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
@@ -101,3 +103,8 @@ Fruit Set: apple, banana, lemon, lime, pear
 Sweet Set: icecream, banana, honey, pear, sugar, apple
 Result Set: lemon, lime, icecream, honey, sugar
 ```
+
+<br/>
+
+###Thanks for reading! 
+*Feedback always welcome.*
