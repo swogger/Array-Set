@@ -1,4 +1,4 @@
-ArraySet
+Arrays as Sets
 ========
 ##### Micro-implementation of the basic operations in Set Theory applied on Javascript arrays.
 
