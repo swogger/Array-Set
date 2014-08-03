@@ -1,7 +1,7 @@
 ArraySet
 ========
 Micro-implementation of the four basic functions in Set Theory applied on Javascript arrays.
-<br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/1/' target='_blank'>jsfiddle.net/swogger/4gpDB/1/</a>
+<br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/2/' target='_blank'>jsfiddle.net/swogger/4gpDB/2/</a>
 ________
 
 
