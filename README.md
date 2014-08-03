@@ -21,7 +21,7 @@ Union
 
 ##### Merging two arrays/sets into one without duplicating elements.
 
-By far one of the most common operations on arrays is merging two into one. Unfortunately the native implementation Array.prototype.concat() preserves duplicate values both arrays share, which requires further attention to be dealt with. Union takes care of that. 
+Often merging two or more arrays into one is required. Unfortunately the native implementation Array.prototype.concat() preserves the duplicate values both arrays have in common, which requires more code to be resolved. Union takes care of that. 
 #####Code:
 ```javascript
 var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
@@ -65,7 +65,7 @@ Intersection
 
 <img src='http://upload.wikimedia.org/wikipedia/commons/9/99/Venn0001.svg'/>
 
-##### Remove all elements from array/set 1 that have equivalent in array/set 2
+##### Returns only the elements both arrays/sets have in common.
 #####Code:
 ```javascript
 var fruit = ['apple', 'banana', 'lemon', 'lime', 'pear'];
