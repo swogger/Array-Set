@@ -1,6 +1,6 @@
 ArraySet
 ========
-##### Micro-implementation of the four basic operations in Set Theory applied on Javascript arrays.
+##### Micro-implementation of the basic operations in Set Theory applied on Javascript arrays.
 
 Array are often used as logical sets, groups of elements. 
 Operations on groups are commonsituation
