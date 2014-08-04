@@ -6,13 +6,12 @@ Using arrays as logical sets, or as groups of similar elements, is extremely com
 
 Luckily their implementation requires just a few lines of code, not nearly enough to make it worth creating a library or a module.  
 
-If you need to use the operation to more than two arrays the following rule applies: 
+If you need to use the operations for more than two arrays the following rules apply: 
 
-A ∪ B ∪ C = A ∪ (B ∪ C) = (A ∪ B) ∪ C 
+A ∪ B ∪ C = A ∪ (B ∪ C) = (A ∪ B) ∪ C
 
 A ∩ B ∩ C =  A ∩ (B ∩ C) = (A ∩ B) ∩ C
 
-...
 
 <br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/3/' target='_blank'>jsfiddle.net/swogger/4gpDB/3/</a>
 
