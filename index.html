@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Array-set : array, set, array as set, javascript, union, intersection, difference, exclusion">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Array-set</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/swogger/Array-Set">View on GitHub</a>
+
+          <h1 id="project_title">Array-set</h1>
+          <h2 id="project_tagline">array, set, array as set, javascript, union, intersection, difference, exclusion</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/swogger/Array-Set/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/swogger/Array-Set/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="arrays-as-sets" class="anchor" href="#arrays-as-sets"><span class="octicon octicon-link"></span></a>Arrays as Sets</h1>
+
+<h4>
+<a name="micro-implementation-of-the-basic-operations-in-set-theory-applied-on-javascript-arrays" class="anchor" href="#micro-implementation-of-the-basic-operations-in-set-theory-applied-on-javascript-arrays"><span class="octicon octicon-link"></span></a>Micro-implementation of the basic operations in Set Theory applied on Javascript arrays.</h4>
+
+<p>Using arrays as logical sets, or as groups of similar elements, is extremely common and often requires the use of set operations. Unfortunately such operations have not found yet place in the current version of ECMAScript (ES5).</p>
+
+<p>Luckily their implementation requires just a few lines of code, not nearly enough to make it worth creating a library or a module.  </p>
+
+<p>If you need to use the operations for more than two arrays the following rules apply: </p>
+
+<p>A ∪ B ∪ C = A ∪ (B ∪ C) = (A ∪ B) ∪ C</p>
+
+<p>A ∩ B ∩ C =  A ∩ (B ∩ C) = (A ∩ B) ∩ C</p>
+
+<p><br>Live demo at: <a href="http://jsfiddle.net/swogger/4gpDB/3/" target="_blank">jsfiddle.net/swogger/4gpDB/3/</a></p>
+
+<hr><h2>
+<a name="union" class="anchor" href="#union"><span class="octicon octicon-link"></span></a>Union</h2>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/3/30/Venn0111.svg" alt="Union Operation" title="Union Operation"></p>
+
+<h5>
+<a name="merging-two-arrayssets-into-one-without-duplicating-elements" class="anchor" href="#merging-two-arrayssets-into-one-without-duplicating-elements"><span class="octicon octicon-link"></span></a>Merging two arrays/sets into one without duplicating elements.</h5>
+
+<p>Often merging two or more arrays into one is required. Unfortunately the native implementation Array.prototype.concat() preserves the duplicate values both arrays have in common, which requires more code to be resolved. Union takes care of that. </p>
+
+<h5>
+<a name="code" class="anchor" href="#code"><span class="octicon octicon-link"></span></a>Code:</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'lemon'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">sweet</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'icecream'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'honey'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">,</span> <span class="s1">'sugar'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">union</span><span class="p">(</span><span class="nx">fruit</span><span class="p">,</span> <span class="nx">sweet</span><span class="p">);</span>
+</pre></div>
+
+<h5>
+<a name="preview" class="anchor" href="#preview"><span class="octicon octicon-link"></span></a>Preview:</h5>
+
+<pre><code>Fruit Set: apple, banana, lemon, lime, pear
+Sweet Set: icecream, banana, honey, pear, sugar, apple
+Result Set: apple, banana, lemon, lime, pear, icecream, honey, sugar
+</code></pre>
+
+<h2>
+<a name="difference-relative-complement" class="anchor" href="#difference-relative-complement"><span class="octicon octicon-link"></span></a>Difference (Relative Complement)</h2>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/e/e6/Venn0100.svg"></p>
+
+<h5>
+<a name="remove-all-elements-from-arrayset-1-that-have-equivalent-in-arrayset-2" class="anchor" href="#remove-all-elements-from-arrayset-1-that-have-equivalent-in-arrayset-2"><span class="octicon octicon-link"></span></a>Remove all elements from array/set 1 that have equivalent in array/set 2.</h5>
+
+<h5>
+<a name="code-1" class="anchor" href="#code-1"><span class="octicon octicon-link"></span></a>Code:</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'lemon'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">sweet</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'icecream'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'honey'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">,</span> <span class="s1">'sugar'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">difference</span><span class="p">(</span><span class="nx">fruit</span><span class="p">,</span> <span class="nx">sweet</span><span class="p">);</span>
+</pre></div>
+
+<h5>
+<a name="preview-1" class="anchor" href="#preview-1"><span class="octicon octicon-link"></span></a>Preview:</h5>
+
+<pre><code>Fruit Set: apple, banana, lemon, lime, pear
+Sweet Set: icecream, banana, honey, pear, sugar, apple
+Result Set: lemon, lime
+</code></pre>
+
+<h2>
+<a name="intersection" class="anchor" href="#intersection"><span class="octicon octicon-link"></span></a>Intersection</h2>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/9/99/Venn0001.svg"></p>
+
+<h5>
+<a name="returns-only-the-elements-both-arrayssets-have-in-common" class="anchor" href="#returns-only-the-elements-both-arrayssets-have-in-common"><span class="octicon octicon-link"></span></a>Returns only the elements both arrays/sets have in common.</h5>
+
+<h5>
+<a name="code-2" class="anchor" href="#code-2"><span class="octicon octicon-link"></span></a>Code:</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'lemon'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">sweet</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'icecream'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'honey'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">,</span> <span class="s1">'sugar'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">intersection</span><span class="p">(</span><span class="nx">fruit</span><span class="p">,</span> <span class="nx">sweet</span><span class="p">);</span>
+</pre></div>
+
+<h5>
+<a name="preview-2" class="anchor" href="#preview-2"><span class="octicon octicon-link"></span></a>Preview:</h5>
+
+<pre><code>Fruit Set: apple, banana, lemon, lime, pear
+Sweet Set: icecream, banana, honey, pear, sugar, apple
+Result Set: apple, banana, pear
+</code></pre>
+
+<h2>
+<a name="exclusion-symmetric-difference" class="anchor" href="#exclusion-symmetric-difference"><span class="octicon octicon-link"></span></a>Exclusion (Symmetric Difference)</h2>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/4/46/Venn0110.svg"></p>
+
+<h5>
+<a name="returns-the-elements-from-both-arrays-that-they-did-not-have-in-common" class="anchor" href="#returns-the-elements-from-both-arrays-that-they-did-not-have-in-common"><span class="octicon octicon-link"></span></a>Returns the elements from both arrays that they did NOT have in common.</h5>
+
+<h5>
+<a name="code-3" class="anchor" href="#code-3"><span class="octicon octicon-link"></span></a>Code:</h5>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'lemon'</span><span class="p">,</span> <span class="s1">'lime'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">sweet</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'icecream'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'honey'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">,</span> <span class="s1">'sugar'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">exclusion</span><span class="p">(</span><span class="nx">fruit</span><span class="p">,</span> <span class="nx">sweet</span><span class="p">);</span>
+</pre></div>
+
+<h5>
+<a name="preview-3" class="anchor" href="#preview-3"><span class="octicon octicon-link"></span></a>Preview:</h5>
+
+<pre><code>Fruit Set: apple, banana, lemon, lime, pear
+Sweet Set: icecream, banana, honey, pear, sugar, apple
+Result Set: lemon, lime, icecream, honey, sugar
+</code></pre>
+
+<p><br></p>
+
+<h3>
+<a name="thanks-for-reading" class="anchor" href="#thanks-for-reading"><span class="octicon octicon-link"></span></a>Thanks for reading!</h3>
+
+<p><em>Feedback always welcome.</em>
+<a href="mailto:dimtiar.kazakov@gmail.com">dimtiar.kazakov@gmail.com</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Array-set maintained by <a href="https://github.com/swogger">swogger</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
