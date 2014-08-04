@@ -4,11 +4,15 @@ Arrays as Sets
 
 Using arrays as logical sets, or as groups of similar elements, is extremely common and often requires the use of set operations. Unfortunately such operations have not found yet place in the current version of ECMAScript (ES5).
 
-Luckily their implementation requires just a few lines of code, not nearly enough to make it worth creating a library or a module, so use this repo more as a reference than anything else. 
+Luckily their implementation requires just a few lines of code, not nearly enough to make it worth creating a library or a module.  
 
+If you need to use the operation to more than two arrays the following rule applies: 
 
-If you need to appy the operation to more than two arrays you can do it using the result of the previous call as a parameter for the next. In other words a + b + c = ( a + b ) + c
+A ∪ B ∪ C = A ∪ (B ∪ C) = (A ∪ B) ∪ C 
 
+A ∩ B ∩ C =  A ∩ (B ∩ C) = (A ∩ B) ∩ C
+
+...
 
 <br/>Live demo at: <a href='http://jsfiddle.net/swogger/4gpDB/3/' target='_blank'>jsfiddle.net/swogger/4gpDB/3/</a>
 
